@@ -1,0 +1,70 @@
+<body>
+    <script>
+        var userInput = prompt("How many courses did you finish?", "0");
+        var numOfCourses;
+        numOfCourses = parseInt(userInput);  //function is used to convert the input value to an integer
+
+        console.log("Number of courses finished: " + numOfCourses); //display le resultat
+
+        var total = 0; // variable to store the total
+        
+        if (isNaN(numOfCourses)) //true if it's an 
+        {
+        document.write("Invalid Input!");
+        } 
+        else 
+        {
+        numOfCourses = parseInt(userInput);
+        
+        }
+
+        var courseMarks = [];
+
+        for (var i = 0; i<numOfCourses; i++)
+        {
+            var courseMark = prompt("please enter the mark for course " + (i + 1));
+            courseMarks.push(courseMark);
+            total += parseInt(courseMark);  // Adding the mark to the total
+        }
+        
+        var average = total / numOfCourses; // Calculating the average
+        document.write("<p>");
+        for(var j = 0; j < courseMarks.length; j++)
+        {
+            document.write("<p>Course " + (j+1) + "Mark: " + courseMarks[j] + "</p>");
+        }
+        document.write("</p>");
+        document.write("Total: " + total + "<br>");
+        document.write("Average: " + average);
+    
+        if (average >= 90 && average <= 100) 
+        {
+            document.write("Your grade is A+");
+        } 
+        else if (average >= 80 && average <= 89) 
+        {
+            document.write("Your grade is B");
+        } 
+        else if (average >= 70 && average <= 79)
+        {
+            document.write("Your grade is C");
+        } 
+        else if (average >= 60 && average <= 69) 
+        {
+            document.write("Your grade is D");
+        } 
+        else if (average < 60) 
+        {
+            document.write("Your grade is F");
+        } 
+        else 
+        {
+            document.write("<br>Sorry, All the marks have to be from minimum 0 to maximum 100!</br>");
+        }
+
+        
+        
+
+
+    </script>
+</body>
